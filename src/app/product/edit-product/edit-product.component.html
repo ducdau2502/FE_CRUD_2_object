@@ -1,0 +1,17 @@
+<form [formGroup]="editForm" (ngSubmit)="updateProduct()">
+  <label for="name">Name: </label>
+  <input id="name" formControlName="name" value="{{product?.name}}">
+  <br>
+  <label for="price">Price: </label>
+  <input id="price" formControlName="price" value="{{product?.price}}">
+  <br>
+  <label for="description">Description: </label>
+  <input id="description" formControlName="description" value="{{product?.description}}">
+  <br>
+  <label for="name">Category: </label>
+  <select formControlName="category">
+    <option *ngFor="let c of categories" value="{{c?.id}}">{{c?.name}}</option>
+  </select>
+  <br>
+  <button type="submit">Update Product</button>
+</form>

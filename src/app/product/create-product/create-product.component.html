@@ -1,0 +1,17 @@
+<form [formGroup]="createForm" (ngSubmit)="saveProduct()">
+  <label for="name">Name: </label>
+  <input id="name" formControlName="name">
+  <br>
+  <label for="price">Price: </label>
+  <input id="price" formControlName="price">
+  <br>
+  <label for="description">Description: </label>
+  <input id="description" formControlName="description">
+  <br>
+  <label for="name">Category: </label>
+  <select formControlName="category">
+    <option *ngFor="let c of categories" value="{{c?.id}}">{{c?.name}}</option>
+  </select>
+  <br>
+  <button type="submit">Save Product</button>
+</form>
